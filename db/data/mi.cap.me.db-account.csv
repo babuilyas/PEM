@@ -1,0 +1,5 @@
+id,title,descr,status,currency_code
+1,wallet,wallet account,true,PKR
+2,MEZN Account,Bank Account 1,true,PKR
+3,ST2,Standard Chartered,true,PKR
+4,Credit Card,Alfalah Card,true,PKR

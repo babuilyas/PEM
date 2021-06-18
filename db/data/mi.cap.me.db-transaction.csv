@@ -1,0 +1,5 @@
+id, descr, status,type
+1, deposit trx, default, income
+2, expense trx, default, expense
+3, transfer trx, default, transfer
+4, mixed trx, default, mixed
