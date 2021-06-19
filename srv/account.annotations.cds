@@ -1,5 +1,12 @@
 using {mi.cap.me.srv as my} from '../srv/service';
 
+annotate my.ServiceCatalog.account with {
+    id @title : '{i18n>AccountID}';
+    descr @title : '{i18n>AccountDescription}';
+    title @title : '{i18n>AccountTitle}';
+};
+
+
 annotate my.ServiceCatalog.account with @(UI : {
     HeaderInfo      : {
         $Type          : 'UI.HeaderInfoType',

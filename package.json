@@ -5,12 +5,16 @@
   "repository": "https://github.com/babuilyas/PEM.git",
   "license": "UNLICENSED",
   "private": false,
-  "author": {"name": "Muhammad Ilyas", "email": "ilyas.com.pk@gmail.com"},
+  "author": {
+    "name": "Muhammad Ilyas",
+    "email": "ilyas.com.pk@gmail.com"
+  },
   "dependencies": {
     "@sap/cds": "^5",
     "express": "^4"
   },
   "devDependencies": {
+    "@sap/ux-specification": "^1.90.1",
     "sqlite3": "^5.0.2"
   },
   "scripts": {
@@ -40,5 +44,9 @@
       "no-console": "off",
       "require-atomic-updates": "off"
     }
-  }
+  },
+  "sapux": [
+    "app/pem.accounts",
+    "app/pem.accounts"
+  ]
 }
