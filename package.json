@@ -10,7 +10,7 @@
     "email": "ilyas.com.pk@gmail.com"
   },
   "dependencies": {
-    "@sap/cds": "^5",
+    "@sap/cds": "^5.1.5",
     "express": "^4"
   },
   "devDependencies": {
@@ -18,7 +18,8 @@
     "sqlite3": "^5.0.2"
   },
   "scripts": {
-    "start": "cds run"
+    "start": "cds run",
+    "watch": "cds watch"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",

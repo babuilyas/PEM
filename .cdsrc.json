@@ -1,8 +1,8 @@
 {
     "requires": {
     "auth": {
-      "strategy": "dummy",  //> to configure a pre-built one
-      "impl": "auth-todo",      //> for custom-defined one
+      "strategy": "dummy",  
+      "impl": "auth-todo"
     }
   }
 }

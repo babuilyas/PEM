@@ -1,3 +1,0 @@
-id, parent_ID, account_id, amount, currency_code, fee,exchange_rate,category_id
-1,1,1,100,PKR,0,1,1
-2,2,1,100,PKR,0,1,1

@@ -1,0 +1,6 @@
+### get all transactions
+GET http://localhost:4004/service-catalog/transaction HTTP/1.1
+
+### get all transactions wit lines
+GET http://localhost:4004/service-catalog/transaction/1?$expand=items,lines HTTP/1.1
+

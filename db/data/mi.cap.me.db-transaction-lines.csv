@@ -1,0 +1,3 @@
+up__id, account_id, amount, currency_code, fee,exchange_rate,category_id
+1,1,100,PKR,0,1,1
+2,1,100,PKR,0,1,1
