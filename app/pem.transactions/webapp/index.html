@@ -10,34 +10,26 @@
             window['sap-ushell-config'] = {
                 defaultRenderer: 'fiori2',
                 applications: {
-                    'fe-lrop-v4-1': {
-                        title: 'Accounts',
-                        description: 'A Fiori application.',
-                        additionalInformation: 'SAPUI5.Component=mi.fe.me.accounts.pem.accounts',
-                        applicationType: 'URL',
-                        url: './pem.accounts/webapp/',
-                        navigationMode: 'embedded'
-                    },
-                    'fe-lrop-v4-2': {
+                    'fe-lrop-v4': {
                         title: 'Transactions',
                         description: 'A Fiori application.',
                         additionalInformation: 'SAPUI5.Component=mi.fe.me.pem.transactions',
                         applicationType: 'URL',
-                        url: './pem.transactions/webapp/',
+                        url: './',
                         navigationMode: 'embedded'
                     }
                 }
             };
         </script>
 
-        <script src="https://ui5.sap.com/1.90.0/test-resources/sap/ushell/bootstrap/sandbox.js"></script>
+        <script src="https://ui5.sap.com/test-resources/sap/ushell/bootstrap/sandbox.js"></script>
         <script
-            src="https://ui5.sap.com/1.90.0/resources/sap-ui-core.js"
+            src="https://ui5.sap.com/resources/sap-ui-core.js"
             data-sap-ui-libs="sap.m, sap.ushell, sap.fe.templates"
             data-sap-ui-compatVersion="edge"
             data-sap-ui-theme="sap_fiori_3"
             data-sap-ui-frameOptions="allow"
-            data-sap-ui-bindingSyntax="complex"            
+            data-sap-ui-bindingSyntax="complex"
         ></script>
         <script>
             sap.ui.getCore().attachInit(function() {
