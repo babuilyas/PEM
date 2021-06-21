@@ -48,6 +48,8 @@
   },
   "sapux": [
     "app/pem.accounts",
-    "app/pem.accounts"
+    "app/pem.accounts",
+    "app/pem.transactions",
+    "app/pem.transactions"
   ]
 }
