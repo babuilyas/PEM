@@ -14,4 +14,8 @@ service ServiceCatalog {
         action reconcile_transaction();
         action post_transaction();
     };
-   }
+}
+
+annotate mi.cap.me.srv.ServiceCatalog.account with @odata.draft.enabled ;
+annotate mi.cap.me.srv.ServiceCatalog.transaction with @odata.draft.enabled ;
+

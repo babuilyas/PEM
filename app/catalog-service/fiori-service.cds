@@ -5,6 +5,7 @@ annotate my.account with {
     descr @title : '{i18n>AccountDescription}';
     title @title : '{i18n>AccountTitle}';
     status @title : '{i18n>AccountStatus}';
+    balance @title : '{i18n>AccountBalance}' @Measures.ISOCurrency : currency_code;
 };
 
 annotate my.account with @(
@@ -13,7 +14,25 @@ annotate my.account with @(
             $Type          : 'UI.HeaderInfoType',
             TypeName       : 'Account',
             TypeNamePlural : 'Accounts',
+            Title : {
+                $Type : 'UI.DataField',
+                Value : descr,
+            },
+            Description : {
+                $Type : 'UI.DataField',
+                Value: id,
+            },
         },
+        HeaderFacets  : [
+            {
+                $Type : 'UI.ReferenceFacet',
+                Target : '@UI.DataPoint#Balance',
+            },
+            {
+                $Type : 'UI.ReferenceFacet',
+                Target : '@UI.DataPoint#Image',
+            },
+        ],
         SelectionFields : [title, id, currency_code ],
         LineItem        : [
             {
@@ -30,14 +49,29 @@ annotate my.account with @(
             },
             {
                 $Type : 'UI.DataField',
+                Value : balance,
+                
+            },
+            {
+                $Type : 'UI.DataField',
                 Value : currency_code,
             },
             {
                 $Type       : 'UI.DataField',
                 Value       : status,
                 Criticality : {$value : #Information },
-            },
-        ]
+            },            
+        ],
+        DataPoint #Balance : {
+            $Type : 'UI.DataPointType',
+            Value : balance,
+            Title : '{i18n>AccountBalance}'
+        },       
+        DataPoint #Image : {
+            $Type : 'UI.DataPointType',
+            Value : image,
+            
+        },
     }
 );
 
