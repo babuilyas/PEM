@@ -10,13 +10,14 @@ using {
 namespace mi.cap.me.db;
 
 entity account : managed {
-    key id              : Integer @title : 'Account ID';
+    key id              : Integer;
         title           : localized String;
         descr           : localized String;
         status          : Boolean;
         currency        : Currency;
-        image           : LargeBinary @Core.MediaType : 'image/png';
+        image           : LargeBinary ;
         virtual balance : Decimal;
+        transactions    : Association to many transaction;
 }
 
 entity transaction : managed {

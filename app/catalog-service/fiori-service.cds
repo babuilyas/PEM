@@ -5,8 +5,26 @@ annotate my.account with {
     descr @title : '{i18n>AccountDescription}';
     title @title : '{i18n>AccountTitle}';
     status @title : '{i18n>AccountStatus}';
-    balance @title : '{i18n>AccountBalance}' @Measures.ISOCurrency : currency_code;
+    balance @title : '{i18n>AccountBalance}' @Measures.ISOCurrency : currency_code;    
+    image @title : 'Image' @Core.MediaType : 'image/png' ;
 };
+
+// annotate my.account with {
+//     image @Core : { AcceptableMediaTypes : [
+//         'image/png',
+//     ], 
+//     ValueException : {
+//         $Type : 'Core.ValueExceptionType',
+//         info : {
+//             $Type : 'Core.MessageType',
+//             code : '404',
+//             message : 'Image not found',
+//             severity : 'info',
+//         },
+//     },
+//     }
+// };
+
 
 annotate my.account with @(
     UI   : {
@@ -22,6 +40,7 @@ annotate my.account with @(
                 $Type : 'UI.DataField',
                 Value: id,
             },
+            TypeImageUrl : 'image',          
         },
         HeaderFacets  : [
             {
@@ -31,6 +50,16 @@ annotate my.account with @(
             {
                 $Type : 'UI.ReferenceFacet',
                 Target : '@UI.DataPoint#Image',
+            },
+        ],
+        Facets : [
+            {
+                $Type : 'UI.ReferenceFacet',
+                Target : '@UI.FieldGroup#Header',
+            },
+            {
+                $Type : 'UI.ReferenceFacet',
+                Target : '@UI.FieldGroup#Media',
             },
         ],
         SelectionFields : [title, id, currency_code ],
@@ -71,6 +100,27 @@ annotate my.account with @(
             $Type : 'UI.DataPointType',
             Value : image,
             
+        },      
+        FieldGroup #Header : {
+            $Type : 'UI.FieldGroupType',
+            Label : '{i18n>AccountFormHeader}',
+            Data : [
+                {   $Type : 'UI.DataField', Value : title,  },
+                {   $Type : 'UI.DataField', Value : descr,  },
+                {   $Type : 'UI.DataField', Value : currency_code,  },
+                {   $Type : 'UI.DataField', Value : status,  },
+            ],
+        },     
+        FieldGroup #Media : {
+            $Type : 'UI.FieldGroupType',
+            Label : 'Media',                        
+            Data : [
+                {
+                    $Type : 'UI.DataField',
+                    Value : image,                                        
+                },
+
+            ],            
         },
     }
 );
