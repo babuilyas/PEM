@@ -15,7 +15,7 @@ entity account : managed {
         descr           : localized String;
         status          : Boolean;
         currency        : Currency;
-        image           : LargeBinary ;
+        image           : Association to one Attachments;
         virtual balance : Decimal;
         transactions    : Association to many transaction;
 }
@@ -43,8 +43,8 @@ entity transaction : managed {
                                         item     : Association to one item;
                                         quantity : Integer;
                                     }
-        image                     : LargeBinary @Core.MediaType : 'image/png';
-        voice                     : LargeBinary @Core.MediaType : 'audio/wav';
+        image                     : Association to one Attachments;
+        voice                     : Association to one Attachments;
         // UI conidtional actions
         virtual enableVoid        : Boolean;
         virtual enableReconcilied : Boolean;
@@ -56,6 +56,7 @@ entity payee @(cds.autoexpose) : managed {
 
 entity item @(cds.autoexpose) : managed {
     key name : String;
+    image : Association to one Attachments;
 }
 
 entity category : sap.common.CodeList {
@@ -70,5 +71,15 @@ type transaction_type : String enum {
     income;
     expense;
     transfer;
-    mixed;
+}
+
+entity Attachments @(cds.autoexpose) {
+  key ID : UUID;
+  
+   @Core.ContentDisposition.Filename: 'ID'
+@Core.MediaType:mediaType
+
+  content : LargeBinary; 
+    @Core.IsMediaType: true
+  mediaType : String;
 }

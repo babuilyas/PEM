@@ -2,7 +2,7 @@
 GET http://localhost:4004/service-catalog/account HTTP/1.1
 
 ### get single account
-GET http://localhost:4004/service-catalog/account(id=1,IsActiveEntity=true)/image/$value HTTP/1.1
+GET http://localhost:4004/service-catalog/account(id=1,IsActiveEntity=true)/image HTTP/1.1
 
 ###
 GET http://localhost:4004/service-catalog/Currencies HTTP/1.1
@@ -20,3 +20,9 @@ Content-Type: application/json
     "currency_code": "PKR" 
 }
 
+###
+GET http://localhost:4004/service-catalog/Attachments
+Content-Type: application/json
+###
+GET http://localhost:4004/service-catalog/Attachments(c7bf7168-0e30-48d6-aed2-6355d3effb16)
+Content-Type: application/json

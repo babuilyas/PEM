@@ -7,6 +7,7 @@ service ServiceCatalog {
     entity account as projection on my.account { * };
  
     entity transaction as projection on my.transaction { * } 
+    
     actions{ 
         @sap.applicable.path : 'enableVoid'
         action void_transaction();
@@ -16,6 +17,6 @@ service ServiceCatalog {
     };
 }
 
-annotate mi.cap.me.srv.ServiceCatalog.account with @odata.draft.enabled ;
-annotate mi.cap.me.srv.ServiceCatalog.transaction with @odata.draft.enabled ;
+//annotate mi.cap.me.srv.ServiceCatalog.account with @odata.draft.enabled ;
+//annotate mi.cap.me.srv.ServiceCatalog.transaction with @odata.draft.enabled ;
 

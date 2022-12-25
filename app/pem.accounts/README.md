@@ -1,21 +1,21 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Sat Jun 19 2021 15:03:56 GMT+0500 (Pakistan Standard Time)|
+|**Generation Date and Time**<br>Sat Jul 10 2021 18:50:12 GMT+0500 (Pakistan Standard Time)|
 |**App Generator**<br>@sap/generator-fiori|
-|**App Generator Version**<br>1.2.1|
+|**App Generator Version**<br>1.2.4|
 |**Generation Platform**<br>Visual Studio Code|
 |**Floorplan Used**<br>List Report Object Page V4|
 |**Service Type**<br>Local Cap|
 |**Service URL**<br>/service-catalog/
 |**Module Name**<br>pem.accounts|
-|**Application Title**<br>Accounts|
-|**Namespace**<br>mi.fe.me.accounts|
+|**Application Title**<br>App Title|
+|**Namespace**<br>mi.fe|
 |**UI5 Theme**<br>sap_fiori_3|
-|**UI5 Version**<br>1.90.0|
-|**Enable Telemetry**<br>False|
+|**UI5 Version**<br>Latest|
+|**Enable Telemetry**<br>True|
 |**Main Entity**<br>account|
-|**Navigation Entity**<br>None|
+|**Navigation Entity**<br>transactions|
 
 ## pem.accounts
 

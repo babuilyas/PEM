@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:l="sap.ui.layout">
+	<l:VerticalLayout  core:require="{handler: 'mi/fe/pem/accounts/ext/fragment/media-update'}" visible="{= ${ui>/editMode} === 'Editable'}">
+		<Text text="media-update" />
+		<unified:FileUploader id="fu1" fileType="png,jpg,gif" sendXHR="true" uploadUrl="/"></unified:FileUploader>
+		<Button text="media-update" press="handler.predefinedMethod" />
+	</l:VerticalLayout>
+</core:FragmentDefinition>

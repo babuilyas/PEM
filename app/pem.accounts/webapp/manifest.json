@@ -1,7 +1,7 @@
 {
     "_version": "1.32.0",
     "sap.app": {
-        "id": "mi.fe.me.accounts.pem.accounts",
+        "id": "mi.fe.pem.accounts",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -80,6 +80,11 @@
                     "pattern": "account({key}):?query:",
                     "name": "accountObjectPage",
                     "target": "accountObjectPage"
+                },
+                {
+                    "pattern": "account({key})/transactions({key2}):?query:",
+                    "name": "transactionObjectPage",
+                    "target": "transactionObjectPage"
                 }
             ],
             "targets": {
@@ -97,7 +102,8 @@
                                         "route": "accountObjectPage"
                                     }
                                 }
-                            }
+                            },
+                            "initialLoad": "Enabled"
                         }
                     }
                 },
@@ -107,7 +113,41 @@
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
-                            "entitySet": "account"
+                            "editableHeaderContent": false,
+                            "entitySet": "account",
+                            "navigation": {
+                                "transactions": {
+                                    "detail": {
+                                        "route": "transactionObjectPage"
+                                    }
+                                }
+                            },
+                            "content": {
+                                "body": {
+                                    "sections": {
+                                        "mediaupdate": {
+                                            "name": "mi.fe.pem.accounts.ext.fragment.media-update",
+                                            "position": {
+                                                "anchor": "FG1",
+                                                "placement": "After"
+                                            },
+                                            "type": "XMLFragment",
+                                            "title": "Media Update"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "transactionObjectPage": {
+                    "type": "Component",
+                    "id": "transactionObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "entitySet": "transaction"
                         }
                     }
                 }

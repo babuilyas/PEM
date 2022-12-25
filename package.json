@@ -14,7 +14,8 @@
     "express": "^4"
   },
   "devDependencies": {
-    "@sap/ux-specification": "^1.90.1",
+    "@sap/ux-specification": "^1.90.4",
+    "cds-swagger-ui-express": "^0.2.0",
     "sqlite3": "^5.0.2"
   },
   "scripts": {
@@ -46,23 +47,15 @@
       "require-atomic-updates": "off"
     }
   },
-  "sapux": [
-    "app/pem.accounts",
-    "app/pem.accounts",
-    "app/pem.transactions",
-    "app/pem.transactions",
-    "app/pem.transactions",
-    "app/pem.transactions"
-  ],
   "cds": {
     "requires": {
       "db": {
         "kind": "sqlite",
-        "model": "*",
-        "credentials": {
-          "database": "db.sqlite"
-        }
+        "model": "*"
       }
     }
-  }
+  },
+  "sapux": [
+    "app/pem.accounts"
+  ]
 }
